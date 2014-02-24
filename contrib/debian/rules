@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_wildlifecoin
+#build/wildlifecoind::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_wildlifecoin)
+
+DEB_INSTALL_EXAMPLES_wildlifecoind += debian/examples/*
+DEB_INSTALL_MANPAGES_wildlifecoind += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix wildlifecoind
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f wildlifecoin-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake wildlifecoin-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_wildlifecoin
+	src/test_wildlifecoin
+
+# Ensure wrapper is set executable
+binary-post-install/wildlifecoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/wildlifecoind
+binary-post-install/wildlifecoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/wildlifecoin-qt

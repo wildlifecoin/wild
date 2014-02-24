@@ -1,0 +1,12 @@
+Building Wildlifecoin
+
+See doc/readme-qt.rst for instructions on building Wildlifecoin-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Wildlifecoin.
+
+See doc/build-*.txt for instructions on building wildlifecoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Wildlifecoin.
+
+Further build information and documentation is available at
+the official Wildlifecoin website, http://www.wildlifecoin.org

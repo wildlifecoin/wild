@@ -1,0 +1,6 @@
+wildlifecoin-qt usr/bin
+share/pixmaps/wildlifecoin32.xpm usr/share/pixmaps
+share/pixmaps/wildlifecoin16.xpm usr/share/pixmaps
+share/pixmaps/wildlifecoin128.png usr/share/pixmaps
+debian/wildlifecoin-qt.desktop usr/share/applications
+debian/wildlifecoin-qt.protocol usr/share/kde4/services/

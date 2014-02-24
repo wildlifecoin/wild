@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wildlifecoin
+Comment=Wildlifecoin P2P Cryptocurrency
+Exec=/usr/bin/wildlifecoin-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/wildlifecoin128.png
+MimeType=x-scheme-handler/bitcoin;
+Categories=Office;
+Name[en_US]=wildlifecoin-qt.desktop
